@@ -48,11 +48,12 @@ function format(x){
 window.LESSON_DATA=src.map((x)=>{
  const f=format(x), why=Array.isArray(x.why)?x.why:[text(x.why||x.decision||x.focus)].filter(Boolean), wrong=Array.isArray(x.wrong)?x.wrong:[text(x.wrong)].filter(Boolean);
  const focus=String(x.focus||x.sectionName||'').trim(), branch=focus.split(/[｜：]/)[0].trim()||mapTop[x.section]||'Grammar';
+ const stage0Unsafe=(f==='order'||f==='write'||Number(x.section)===4);
  return {
    id:x.id,key:x.key,section:String(x.section),sectionName:x.sectionName||'',format:f,focus,
    question:x.question||'',choices:Array.isArray(x.choices)?x.choices.map(stripChoice):[],options:Array.isArray(x.choices)?x.choices.map(stripChoice):[],answerIndex:answerIndex(x),
    answer:x.answer||x.completed||'',completed:x.completed||x.answer||'',translation:x.translation||(Array.isArray(x.translations)?x.translations.join(' / '):''),
-   audioQ:(f==='order'||f==='write')?'':safeAudioQ(x),audioA:x.completed||x.answer||'',
+   audioQ:stage0Unsafe?'':safeAudioQ(x),audioA:x.completed||x.answer||'',
    hints:hints(x),correct:why,wrong:wrong.length?wrong:[text(x.decision)||'正解の形と，選びたくなる誤答の形を比べよう。'],method:text(x.decision)||'',
    outputCue:x.translation||(Array.isArray(x.translations)?x.translations.join(' / '):''),outputChunks:chunks(x),tokens:tokens(x),
    mapPath:[mapTop[x.section]||'Grammar',branch,focus].filter((v,i,a)=>v&&a.indexOf(v)===i),
