@@ -12,12 +12,14 @@
   "engine": "v1",
   "teacher": true,
   "studentExport": true,
-  "repository": "branzfamily01/clover-lesson8",
+  "repository": "avenirplus/clover-lesson8",
   "sourcePath": ".",
   "targetPath": "materials/clover/lesson8/",
-  "plannedSchoolBaseUrl": "https://english-classroom.meguro-shs-5541.workers.dev/",
-  "plannedAccessUrl": "https://english-classroom.meguro-shs-5541.workers.dev/materials/clover/lesson8/",
-  "reviewUrl": "https://branzfamily01.github.io/clover-lesson8/",
+  "plannedNeutralOwner": "avenirplus",
+  "plannedCloudflareSubdomain": "avenirplus",
+  "plannedBaseUrl": "https://english-classroom.avenirplus.workers.dev/",
+  "plannedAccessUrl": "https://english-classroom.avenirplus.workers.dev/materials/clover/lesson8/",
+  "reviewUrl": "https://avenirplus.github.io/clover-lesson8/",
   "updatedAt": "2026-09-11",
-  "notes": "Gold Standard lesson. Student production remains separately gated."
+  "notes": "Gold Standard lesson. Teacher-approved. Student production remains separately gated."
 }
